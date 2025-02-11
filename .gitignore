@@ -1,0 +1,34 @@
+# Unityの不要なフォルダ
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+
+# OS固有の不要ファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE固有の不要ファイル
+.vs/
+.idea/
+*.suo
+*.user
+*.userprefs
+*.csproj
+*.pidb
+*.booproj
+*.svd
+*.pdb
+
+# Unityのパッケージ管理関係
+Packages/com.unity.package-manager-do-not-modify/
+Packages/packages-lock.json
+
+# Git管理対象にするべきフォルダ
+!Assets/
+!Packages/
+!ProjectSettings/
