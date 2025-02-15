@@ -9,12 +9,14 @@ public class StageManager : MonoBehaviour
     private void Start()
     {
         LoadAndCreateStage(1); // ステージ1を読み込む例
+        Debug.Log("hihih");
     }
 
     public void LoadAndCreateStage(int stageID)
     {
-        // JSONファイルを読み込む
-        string jsonPath = Path.Combine(Application.streamingAssetsPath, jsonFileName);
+        // MapDataフォルダからJSONを読み込む場合
+        string jsonPath = Path.Combine(Application.dataPath, "MapData", jsonFileName);
+
         string jsonContent = File.ReadAllText(jsonPath);
         
         // JSONをパース
