@@ -15,23 +15,23 @@ public class PlayerCollisionPresenter : MonoBehaviour
     {
         _playerCollisionModel = new PlayerCollisionModel("");
 
-        Bind();
+        // Bind();
     }
 
     /// <summary>
     /// データのバインド
     /// </summary>
-    void Bind()
-    {
-        // Modelのデータが変更されたらViewに通知
-        _playerCollisionModel.CollidedObjectName
-            .Skip(1) // 初期値の通知をスキップ
-            .Subscribe(objectName =>
-            {
-                _playerCollisionView.PlaySE(objectName);
-            })
-            .AddTo(_playerCollisionView);
-    }
+    // void Bind()
+    // {
+    //     // Modelのデータが変更されたらViewに通知
+    //     _playerCollisionModel.CollidedObjectName
+    //         .Skip(1) // 初期値の通知をスキップ
+    //         .Subscribe(objectName =>
+    //         {
+    //             _playerCollisionView.PlaySE(objectName);
+    //         })
+    //         .AddTo(_playerCollisionView);
+    // }
 
     public void OnPlayerCollision(string objectName)
     {
