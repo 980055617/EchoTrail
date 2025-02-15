@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class MainBallModel
 {
@@ -6,6 +7,15 @@ public class MainBallModel
     private float jumpForce = 5f;
     private bool isGrounded;
     private Vector3 velocity;
+
+    private Dictionary<string, float> bouncePowers = new Dictionary<string, float>()
+    {
+        { "HighBounce", 10f },
+        { "LowBounce", 5f },
+        { "NoBounce", 0f },
+        { "SuperBounce", 15f },
+        { "MediumBounce", 7.5f }
+    };
 
     public float MoveSpeed => moveSpeed;
     public float JumpForce => jumpForce;
@@ -24,5 +34,10 @@ public class MainBallModel
     {
         moveSpeed = speed;
         jumpForce = jump;
+    }
+
+    public float GetBounceForce(string objectTag)
+    {
+        return bouncePowers.TryGetValue(objectTag, out float force) ? force : 5f;
     }
 } 

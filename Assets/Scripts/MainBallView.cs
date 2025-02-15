@@ -3,8 +3,8 @@ using UnityEngine;
 public class MainBallView : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float groundCheckRadius = 0.1f;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float groundCheckRadius = 0.5f;
+    [SerializeField] private LayerMask groundLayer = -1;
 
     private void Awake()
     {
@@ -23,8 +23,12 @@ public class MainBallView : MonoBehaviour
 
     public bool CheckGrounded()
     {
+        // デバッグ用の視覚化（開発時のみ）
+        Debug.DrawRay(transform.position, Vector3.down * 0.6f, Color.red);
+        
+        // 球体の接地判定を行う
         return Physics.CheckSphere(
-            transform.position - new Vector3(0, 0.5f, 0),
+            transform.position - new Vector3(0, 0.5f, 0),  // ボールの下部で判定
             groundCheckRadius,
             groundLayer
         );
@@ -49,4 +53,18 @@ public class MainBallView : MonoBehaviour
             -rb.velocity.x
         ) * rotationSpeed;
     }
+
+    public void SetBounceVelocity(float bounceForce)
+    {
+        rb.velocity = new Vector3(rb.velocity.x, bounceForce, rb.velocity.z);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Presenterに通知
+        OnBallCollision?.Invoke(collision.gameObject.tag);
+    }
+
+    // Presenterに通知するためのイベント
+    public event System.Action<string> OnBallCollision;
 } 

@@ -15,12 +15,21 @@ public class MainBallPresenter : MonoBehaviour
             speed: 5f,
             jump: 5f
         );
+        
+        // 衝突イベントの購読
+        view.OnBallCollision += HandleCollision;
     }
 
     private void Update()
     {
         // 接地判定の更新
         model.IsGrounded = view.CheckGrounded();
+        Debug.Log(view.CheckGrounded());
+        // 接地している間、毎フレームログを表示
+        if (model.IsGrounded)
+        {
+            Debug.Log("ボールは地面に接地しています");
+        }
 
         // 入力処理
         HandleInput();
@@ -70,5 +79,18 @@ public class MainBallPresenter : MonoBehaviour
         yield return new WaitForSeconds(duration);
         
         model.SetMovementParameters(originalSpeed, model.JumpForce);
+    }
+
+    private void HandleCollision(string objectTag)
+    {
+        float bounceForce = model.GetBounceForce(objectTag);
+        Debug.Log($"衝突したオブジェクトのタグ: {objectTag}, 跳ね返りの強さ: {bounceForce}");
+        view.SetBounceVelocity(bounceForce);
+    }
+
+    private void OnDestroy()
+    {
+        // イベントの購読解除
+        view.OnBallCollision -= HandleCollision;
     }
 } 
