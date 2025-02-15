@@ -1,21 +1,5 @@
 {
   "dependencies": {
-    "com.cysharp.r3": {
-      "version": "https://github.com/Cysharp/R3.git?path=src/R3.Unity/Assets/R3.Unity",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.modules.imgui": "1.0.0"
-      },
-      "hash": "1d953ccfb248f1bb395191d0474f3446d052d2a5"
-    },
-    "com.github-glitchenzo.nugetforunity": {
-      "version": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "46e771daa4b2b00db9bd7356ab3c8874c9d83cb4"
-    },
     "com.unity.collab-proxy": {
       "version": "2.6.0",
       "depth": 0,
