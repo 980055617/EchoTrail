@@ -9,10 +9,12 @@ using System;
 public class PutSystem : MonoBehaviour
 {
     [SerializeField] private List<Button> buttonList; // ボタンリスト
-    [SerializeField] private Transform spawnPoint; // インスタンシエイトの基準点
+    public Transform spawnPoint; // インスタンシエイトの基準点
     [SerializeField] private SoundManager soundManager; // サウンドマネージャー
+    [SerializeField] private GameObject scrollView;
+    
 
-    private void Start()
+    public void SetPutSystem()
     {
         foreach (var button in buttonList)
         {
@@ -41,5 +43,7 @@ public class PutSystem : MonoBehaviour
         {
             Debug.LogWarning($"Prefab {objectName} が Resources に見つかりません。");
         }
+
+        scrollView.SetActive(false);
     }
 }
