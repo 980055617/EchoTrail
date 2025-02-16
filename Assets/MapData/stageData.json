@@ -1,0 +1,130 @@
+{
+    "stages": [
+        {
+            "stageID": 1,
+            "stageName": "Forest Stage",
+            "points": [
+                {
+                    "id": 1,
+                    "position": {
+                        "x": 1.5,
+                        "y": 0.0,
+                        "z": 3.2
+                    },
+                    "instrument": {
+                        "name": "Bongo_001",
+                        "pitch": "C3",
+                        "rotation": {
+                            "x": 90,
+                            "y": 90,
+                            "z": 90
+                        },
+                        "BouncePower": "NoBounce",
+                        "SEName": "abc"
+                    }
+                },
+                {
+                    "id": 2,
+                    "position": {
+                        "x": -2.0,
+                        "y": 0.0,
+                        "z": 4.5
+                    },
+                    "instrument": {
+                        "name": "SteelDrum",
+                        "pitch": "D3",
+                        "rotation": {
+                            "x": 90,
+                            "y": 90,
+                            "z": 90
+                        },
+                        "BouncePower": "HighBounce",
+                        "SEName": "cdb"
+                    }
+                },
+                {
+                    "id": 3,
+                    "position": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": -1.8
+                    },
+                    "instrument": {
+                        "name": "WoodBell",
+                        "pitch": "E3",
+                        "rotation": {
+                            "x": 90,
+                            "y": 90,
+                            "z": 90
+                        },
+                        "BouncePower": "HighBounce",
+                        "SEName": "bds"
+                    }
+                }
+            ]
+        },
+        {
+            "stageID": 2,
+            "stageName": "City Stage",
+            "points": [
+                {
+                    "id": 1,
+                    "position": {
+                        "x": 1.5,
+                        "y": 0.0,
+                        "z": 3.2
+                    },
+                    "instrument": {
+                        "name": "Piano",
+                        "pitch": "C3",
+                        "rotation": {
+                            "x": 90,
+                            "y": 90,
+                            "z": 90
+                        },
+                        "BouncePower": "NoBounce",
+                        "SEName": "abc"
+                    }
+                },
+                {
+                    "id": 2,
+                    "position": {
+                        "x": -2.0,
+                        "y": 0.0,
+                        "z": 4.5
+                    },
+                    "instrument": {
+                        "name": "Piano",
+                        "pitch": "D3",
+                        "rotation": {
+                            "x": 90,
+                            "y": 90,
+                            "z": 90
+                        },
+                        "BouncePower": "HighBounce",
+                        "SEName": "cdb"
+                    }
+                },
+                {
+                    "id": 3,
+                    "position": {
+                        "x": 3.0,
+                        "y": 0.0,
+                        "z": -1.8
+                    },
+                    "instrument": {
+                        "name": "Piano",
+                        "pitch": "E3",
+                        "rotation": {
+                            "x": 90,
+                            "y": 90,
+                            "z": 90
+                        },
+                        "BouncePower": "HighBounce",
+                        "SEName": "bds"
+                    }
+                }
+            ]
+        }
+    ]
+}
