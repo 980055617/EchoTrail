@@ -4,12 +4,11 @@ using System.IO;
 public class StageManager : MonoBehaviour
 {
     [SerializeField] private string jsonFileName = "stageData.json";
-    [SerializeField] private string prefabPath = "Prefabs/Instruments/";
+    [SerializeField] private string prefabPath = "Cubes/Prefabs/";
 
     private void Start()
     {
-        LoadAndCreateStage(1); // ステージ1を読み込む例
-        Debug.Log("hihih");
+        LoadAndCreateStage(1);
     }
 
     public void LoadAndCreateStage(int stageID)
@@ -35,11 +34,15 @@ public class StageManager : MonoBehaviour
 
     private void CreateInstrument(Point point)
     {
+        // デバッグログを追加
+        Debug.Log($"Trying to load prefab: {prefabPath + point.instrument.name}");
+
         // Prefabをロード
         GameObject prefab = Resources.Load<GameObject>(prefabPath + point.instrument.name);
         if (prefab == null)
         {
             Debug.LogError($"Prefab not found: {point.instrument.name}");
+            Debug.LogError($"Full path attempted: Resources/{prefabPath + point.instrument.name}");
             return;
         }
 
